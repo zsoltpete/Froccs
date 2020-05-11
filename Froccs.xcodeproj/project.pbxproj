@@ -43,6 +43,12 @@
 		546E2C2D245EDFCE003FDCE5 /* Froccs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546E2C2C245EDFCE003FDCE5 /* Froccs.swift */; };
 		546E2C2F245EE017003FDCE5 /* Rate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546E2C2E245EE017003FDCE5 /* Rate.swift */; };
 		546E2C31245EE537003FDCE5 /* RateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546E2C30245EE537003FDCE5 /* RateView.swift */; };
+		546E2C38245EF72E003FDCE5 /* FroccsDetailInterfaces.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546E2C33245EF72E003FDCE5 /* FroccsDetailInterfaces.swift */; };
+		546E2C39245EF72E003FDCE5 /* FroccsDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546E2C34245EF72E003FDCE5 /* FroccsDetailPresenter.swift */; };
+		546E2C3A245EF72E003FDCE5 /* FroccsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546E2C35245EF72E003FDCE5 /* FroccsDetailViewController.swift */; };
+		546E2C3B245EF72E003FDCE5 /* FroccsDetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546E2C36245EF72E003FDCE5 /* FroccsDetailInteractor.swift */; };
+		546E2C3C245EF72E003FDCE5 /* FroccsDetailWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546E2C37245EF72E003FDCE5 /* FroccsDetailWireframe.swift */; };
+		546E2C3F245EFFBE003FDCE5 /* FroccsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546E2C3E245EFFBE003FDCE5 /* FroccsManager.swift */; };
 		F6CECDC83E7FBBA684DFF685 /* Pods_Froccs.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D1B61EADA8286B2824C37F1 /* Pods_Froccs.framework */; };
 /* End PBXBuildFile section */
 
@@ -94,6 +100,12 @@
 		546E2C2C245EDFCE003FDCE5 /* Froccs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Froccs.swift; sourceTree = "<group>"; };
 		546E2C2E245EE017003FDCE5 /* Rate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rate.swift; sourceTree = "<group>"; };
 		546E2C30245EE537003FDCE5 /* RateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateView.swift; sourceTree = "<group>"; };
+		546E2C33245EF72E003FDCE5 /* FroccsDetailInterfaces.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FroccsDetailInterfaces.swift; sourceTree = "<group>"; };
+		546E2C34245EF72E003FDCE5 /* FroccsDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FroccsDetailPresenter.swift; sourceTree = "<group>"; };
+		546E2C35245EF72E003FDCE5 /* FroccsDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FroccsDetailViewController.swift; sourceTree = "<group>"; };
+		546E2C36245EF72E003FDCE5 /* FroccsDetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FroccsDetailInteractor.swift; sourceTree = "<group>"; };
+		546E2C37245EF72E003FDCE5 /* FroccsDetailWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FroccsDetailWireframe.swift; sourceTree = "<group>"; };
+		546E2C3E245EFFBE003FDCE5 /* FroccsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FroccsManager.swift; sourceTree = "<group>"; };
 		9C0B7910D5B3D654CE3114A2 /* Pods-TemplateUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TemplateUITests.debug.xcconfig"; path = "Target Support Files/Pods-TemplateUITests/Pods-TemplateUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		9D1B61EADA8286B2824C37F1 /* Pods_Froccs.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Froccs.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA1C71581E8FB7D1071CE22E /* Pods_TemplateUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TemplateUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -203,6 +215,7 @@
 		1B0BFB31233629E10054E28A /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				546E2C3D245EFFA5003FDCE5 /* Managers */,
 				1B0BFB3F23362B020054E28A /* BaseClasses */,
 				1BDD469E23AFFCAE0020AC54 /* Extensions */,
 				1BDD469F23AFFCB40020AC54 /* Models */,
@@ -250,6 +263,7 @@
 		1B0BFB4E23362FF90054E28A /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				546E2C32245EF719003FDCE5 /* FroccsDetail */,
 				546E2C1A245EDB78003FDCE5 /* FroccsList */,
 				1B0BFB4F233630190054E28A /* Tabbar */,
 			);
@@ -322,6 +336,26 @@
 				546E2C2A245EDE40003FDCE5 /* FroccsItemCell.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		546E2C32245EF719003FDCE5 /* FroccsDetail */ = {
+			isa = PBXGroup;
+			children = (
+				546E2C33245EF72E003FDCE5 /* FroccsDetailInterfaces.swift */,
+				546E2C34245EF72E003FDCE5 /* FroccsDetailPresenter.swift */,
+				546E2C35245EF72E003FDCE5 /* FroccsDetailViewController.swift */,
+				546E2C36245EF72E003FDCE5 /* FroccsDetailInteractor.swift */,
+				546E2C37245EF72E003FDCE5 /* FroccsDetailWireframe.swift */,
+			);
+			path = FroccsDetail;
+			sourceTree = "<group>";
+		};
+		546E2C3D245EFFA5003FDCE5 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				546E2C3E245EFFBE003FDCE5 /* FroccsManager.swift */,
+			);
+			path = Managers;
 			sourceTree = "<group>";
 		};
 		BA60848800195AD7C50DED11 /* Frameworks */ = {
@@ -465,6 +499,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				1B0BFB572336303F0054E28A /* TabbarViewController.swift in Sources */,
+				546E2C39245EF72E003FDCE5 /* FroccsDetailPresenter.swift in Sources */,
+				546E2C3A245EF72E003FDCE5 /* FroccsDetailViewController.swift in Sources */,
+				546E2C3C245EF72E003FDCE5 /* FroccsDetailWireframe.swift in Sources */,
 				1BDD46A223AFFEAE0020AC54 /* Constants.swift in Sources */,
 				546E2C2B245EDE40003FDCE5 /* FroccsItemCell.swift in Sources */,
 				1B0BFB3D23362A000054E28A /* FormatterInterface.swift in Sources */,
@@ -484,12 +521,15 @@
 				1B0BFB3A23362A000054E28A /* UIStoryboardExtension.swift in Sources */,
 				546E2C2F245EE017003FDCE5 /* Rate.swift in Sources */,
 				1B0BFB4723362B740054E28A /* BaseTabbarProtocolController.swift in Sources */,
+				546E2C3F245EFFBE003FDCE5 /* FroccsManager.swift in Sources */,
 				546E2C20245EDB8B003FDCE5 /* FroccsListInterfaces.swift in Sources */,
 				546E2C23245EDB8B003FDCE5 /* FroccsListInteractor.swift in Sources */,
 				1B0BFB4A23362ECE0054E28A /* TabbarProtocol.swift in Sources */,
 				1B0BFB592336303F0054E28A /* TabbarWireframe.swift in Sources */,
+				546E2C38245EF72E003FDCE5 /* FroccsDetailInterfaces.swift in Sources */,
 				1B0BFB4523362B740054E28A /* BaseResponse.swift in Sources */,
 				1B0BFB5B2336303F0054E28A /* TabbarInteractor.swift in Sources */,
+				546E2C3B245EF72E003FDCE5 /* FroccsDetailInteractor.swift in Sources */,
 				1B0BFB4123362B240054E28A /* BaseNavigationController.swift in Sources */,
 				1B0BFB3B23362A000054E28A /* BaseWireframe.swift in Sources */,
 				1B0BFB3923362A000054E28A /* ViewInterface.swift in Sources */,

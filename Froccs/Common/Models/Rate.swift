@@ -10,10 +10,18 @@ import Foundation
 
 class Rate: BaseResponse  {
     
-    var wine: Double?
-    var water: Double?
+    var wine: Int?
+    var water: Int?
     
-    init(wine: Double?, water: Double?) {
+    var wineFormatted:String {
+        String(format: "%dx", wine ?? 0)
+    }
+    
+    var waterFormatted:String {
+        String(format: "%dx", water ?? 0)
+    }
+    
+    init(wine: Int?, water: Int?) {
         self.wine = wine
         self.water = water
     }

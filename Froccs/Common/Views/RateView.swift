@@ -86,8 +86,8 @@ class RateView: UIView {
         guard let rate = rate else  {
             return
         }
-        wineLabel.text = String(format: "%gx", rate.wine ?? 0)
-        waterLabel.text = String(format: "%gx", rate.water ?? 0)
+        wineLabel.text = rate.wineFormatted
+        waterLabel.text = rate.waterFormatted
     }
     
 }

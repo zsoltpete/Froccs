@@ -30,4 +30,8 @@ final class FroccsListWireframe: BaseWireframe {
 // MARK: - Extensions -
 
 extension FroccsListWireframe: FroccsListWireframeInterface {
+    func openDetail(_ froccs: Froccs?) {
+        navigationController?.pushWireframe(FroccsDetailWireframe(froccs))
+    }
+    
 }

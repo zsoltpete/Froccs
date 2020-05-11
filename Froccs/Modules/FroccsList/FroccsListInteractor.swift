@@ -21,42 +21,7 @@ extension FroccsListInteractor: FroccsListInteractorInterface {
     
     func getFroccss(completition: (FroccsListResponse) -> Void) {
         var array = [Froccs]()
-        
-        let item1 = Froccs(name: "KisFröccs", desc: "", rate: Rate(wine: 1, water: 1))
-        let item2 = Froccs(name: "Nagyfröccs", desc: "", rate: Rate(wine: 2, water: 1))
-        let item3 = Froccs(name: "Hosszúlépés", desc: "", rate: Rate(wine: 1, water: 2))
-        let item4 = Froccs(name: "Házmester", desc: "", rate: Rate(wine: 3, water: 2))
-        let item5 = Froccs(name: "Viceházmester", desc: "", rate: Rate(wine: 2, water: 3))
-        let item6 = Froccs(name: "Háziúr (nagyházmester)", desc: "", rate: Rate(wine: 4, water: 1))
-        let item7 = Froccs(name: "Sport fröccs", desc: "", rate: Rate(wine: 1, water: 4))
-        let item8 = Froccs(name: "Lakó fröccs (kisházmester)", desc: "", rate: Rate(wine: 1, water: 4))
-        let item9 = Froccs(name: "Krúdy fröccs", desc: "", rate: Rate(wine: 9, water: 1))
-        let item10 = Froccs(name: "Sóher fröccs", desc: "", rate: Rate(wine: 1, water: 9))
-        
-        let item11 = Froccs(name: "Polgármester", desc: "", rate: Rate(wine: 6, water: 4))
-        let item12 = Froccs(name: "Mafla vagy Maflás", desc: "", rate: Rate(wine: 5, water: 5))
-        let item13 = Froccs(name: "Csatos", desc: "", rate: Rate(wine: 10, water: 5))
-        let item14 = Froccs(name: "Lámpás", desc: "", rate: Rate(wine: 15, water: 5))
-        let item15 = Froccs(name: "Magyar–angol", desc: "", rate: Rate(wine: 6, water: 3))
-        let item16 = Froccs(name: "Bakteranyós", desc: "", rate: Rate(wine: 2.5, water: 2.5))
-        
-        array.append(item1)
-        array.append(item2)
-        array.append(item3)
-        array.append(item4)
-        array.append(item5)
-        array.append(item6)
-        array.append(item7)
-        array.append(item8)
-        array.append(item9)
-        array.append(item10)
-        
-        array.append(item11)
-        array.append(item12)
-        array.append(item13)
-        array.append(item14)
-        array.append(item15)
-        array.append(item16)
+        array.append(contentsOf: FroccsManager.shared.getFrocsss())
         
         let result = FroccsListResponse.success(array)
         completition(result)

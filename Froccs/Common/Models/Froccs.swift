@@ -20,6 +20,12 @@ class Froccs: BaseResponse  {
         self.rate = rate
     }
     
+    init(froccs: Froccs) {
+        self.name = froccs.name
+        self.desc = froccs.desc
+        self.rate = froccs.rate
+    }
+    
 }
 
 extension Froccs:  FroccsItemCellBindable {

@@ -11,6 +11,7 @@
 import UIKit
 
 protocol FroccsListWireframeInterface: WireframeInterface {
+    func openDetail(_ froccs: Froccs?)
 }
 
 protocol FroccsListViewInterface: BaseCollectionViewInterface {

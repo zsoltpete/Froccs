@@ -78,4 +78,8 @@ extension FroccsListViewController:  UITableViewDataSource {
 
 extension FroccsListViewController: UITableViewDelegate {
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        presenter.selectItem(at: indexPath)
+    }
+    
 }

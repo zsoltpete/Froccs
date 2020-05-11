@@ -57,6 +57,9 @@ extension FroccsListPresenter: FroccsListPresenterInterface {
     }
     
     func selectItem(at indexPath: IndexPath) {
+        if let froccs = items[indexPath.row] as? Froccs {
+            wireframe.openDetail(Froccs(froccs: froccs))
+        }
         
     }
     
