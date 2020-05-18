@@ -69,10 +69,6 @@
 		1B0BFB04233628870054E28A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1B0BFB07233628870054E28A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1B0BFB09233628870054E28A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1B0BFB12233628870054E28A /* TemplateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateTests.swift; sourceTree = "<group>"; };
-		1B0BFB14233628870054E28A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1B0BFB1D233628870054E28A /* TemplateUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateUITests.swift; sourceTree = "<group>"; };
-		1B0BFB1F233628870054E28A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1B0BFB2F233629890054E28A /* Initializable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Initializable.swift; sourceTree = "<group>"; };
 		1B0BFB33233629FF0054E28A /* ViewInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewInterface.swift; sourceTree = "<group>"; };
 		1B0BFB34233629FF0054E28A /* UIStoryboardExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIStoryboardExtension.swift; sourceTree = "<group>"; };
@@ -151,8 +147,6 @@
 			isa = PBXGroup;
 			children = (
 				1B0BFAFA233628850054E28A /* Froccs */,
-				1B0BFB11233628870054E28A /* FroccsTests */,
-				1B0BFB1C233628870054E28A /* FroccsUITests */,
 				5419AB482473326F00ECBEA3 /* FroccsTests */,
 				1B0BFAF9233628850054E28A /* Products */,
 				F521AFB15CC9A35D5D3420D4 /* Pods */,
@@ -179,24 +173,6 @@
 				1B0BFB2C2336293B0054E28A /* SupportingFiles */,
 			);
 			path = Froccs;
-			sourceTree = "<group>";
-		};
-		1B0BFB11233628870054E28A /* FroccsTests */ = {
-			isa = PBXGroup;
-			children = (
-				1B0BFB12233628870054E28A /* TemplateTests.swift */,
-				1B0BFB14233628870054E28A /* Info.plist */,
-			);
-			path = FroccsTests;
-			sourceTree = "<group>";
-		};
-		1B0BFB1C233628870054E28A /* FroccsUITests */ = {
-			isa = PBXGroup;
-			children = (
-				1B0BFB1D233628870054E28A /* TemplateUITests.swift */,
-				1B0BFB1F233628870054E28A /* Info.plist */,
-			);
-			path = FroccsUITests;
 			sourceTree = "<group>";
 		};
 		1B0BFB2B2336291F0054E28A /* Application */ = {
