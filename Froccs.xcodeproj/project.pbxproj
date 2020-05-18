@@ -32,6 +32,7 @@
 		1BB2479223E6ED0500EBFD39 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BB2479123E6ED0500EBFD39 /* APIError.swift */; };
 		1BB2479523E6EE8000EBFD39 /* DataExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BB2479423E6EE8000EBFD39 /* DataExtensions.swift */; };
 		1BDD46A223AFFEAE0020AC54 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BDD46A123AFFEAE0020AC54 /* Constants.swift */; };
+		5419AB4A2473326F00ECBEA3 /* FroccsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5419AB492473326F00ECBEA3 /* FroccsTests.swift */; };
 		546E2C20245EDB8B003FDCE5 /* FroccsListInterfaces.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546E2C1B245EDB8B003FDCE5 /* FroccsListInterfaces.swift */; };
 		546E2C21245EDB8B003FDCE5 /* FroccsListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546E2C1C245EDB8B003FDCE5 /* FroccsListPresenter.swift */; };
 		546E2C22245EDB8B003FDCE5 /* FroccsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546E2C1D245EDB8B003FDCE5 /* FroccsListViewController.swift */; };
@@ -51,6 +52,16 @@
 		546E2C3F245EFFBE003FDCE5 /* FroccsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546E2C3E245EFFBE003FDCE5 /* FroccsManager.swift */; };
 		F6CECDC83E7FBBA684DFF685 /* Pods_Froccs.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D1B61EADA8286B2824C37F1 /* Pods_Froccs.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		5419AB4C2473326F00ECBEA3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1B0BFAF0233628850054E28A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1B0BFAF7233628850054E28A;
+			remoteInfo = Froccs;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		1B0BFAF8233628850054E28A /* Froccs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Froccs.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -89,6 +100,9 @@
 		3B0D0A8B8783A36E33477D9B /* Pods-Froccs.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Froccs.debug.xcconfig"; path = "Target Support Files/Pods-Froccs/Pods-Froccs.debug.xcconfig"; sourceTree = "<group>"; };
 		49CC01DE7D73FFBB42A63D64 /* Pods-Froccs.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Froccs.release.xcconfig"; path = "Target Support Files/Pods-Froccs/Pods-Froccs.release.xcconfig"; sourceTree = "<group>"; };
 		4EF7DC8171F9897A5B5FA456 /* Pods-TemplateTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TemplateTests.release.xcconfig"; path = "Target Support Files/Pods-TemplateTests/Pods-TemplateTests.release.xcconfig"; sourceTree = "<group>"; };
+		5419AB472473326F00ECBEA3 /* FroccsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FroccsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5419AB492473326F00ECBEA3 /* FroccsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FroccsTests.swift; sourceTree = "<group>"; };
+		5419AB4B2473326F00ECBEA3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		546E2C1B245EDB8B003FDCE5 /* FroccsListInterfaces.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FroccsListInterfaces.swift; sourceTree = "<group>"; };
 		546E2C1C245EDB8B003FDCE5 /* FroccsListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FroccsListPresenter.swift; sourceTree = "<group>"; };
 		546E2C1D245EDB8B003FDCE5 /* FroccsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FroccsListViewController.swift; sourceTree = "<group>"; };
@@ -123,6 +137,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		5419AB442473326F00ECBEA3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -132,6 +153,7 @@
 				1B0BFAFA233628850054E28A /* Froccs */,
 				1B0BFB11233628870054E28A /* FroccsTests */,
 				1B0BFB1C233628870054E28A /* FroccsUITests */,
+				5419AB482473326F00ECBEA3 /* FroccsTests */,
 				1B0BFAF9233628850054E28A /* Products */,
 				F521AFB15CC9A35D5D3420D4 /* Pods */,
 				BA60848800195AD7C50DED11 /* Frameworks */,
@@ -142,6 +164,7 @@
 			isa = PBXGroup;
 			children = (
 				1B0BFAF8233628850054E28A /* Froccs.app */,
+				5419AB472473326F00ECBEA3 /* FroccsTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -317,6 +340,15 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		5419AB482473326F00ECBEA3 /* FroccsTests */ = {
+			isa = PBXGroup;
+			children = (
+				5419AB492473326F00ECBEA3 /* FroccsTests.swift */,
+				5419AB4B2473326F00ECBEA3 /* Info.plist */,
+			);
+			path = FroccsTests;
+			sourceTree = "<group>";
+		};
 		546E2C1A245EDB78003FDCE5 /* FroccsList */ = {
 			isa = PBXGroup;
 			children = (
@@ -405,18 +437,40 @@
 			productReference = 1B0BFAF8233628850054E28A /* Froccs.app */;
 			productType = "com.apple.product-type.application";
 		};
+		5419AB462473326F00ECBEA3 /* FroccsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5419AB502473326F00ECBEA3 /* Build configuration list for PBXNativeTarget "FroccsTests" */;
+			buildPhases = (
+				5419AB432473326F00ECBEA3 /* Sources */,
+				5419AB442473326F00ECBEA3 /* Frameworks */,
+				5419AB452473326F00ECBEA3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5419AB4D2473326F00ECBEA3 /* PBXTargetDependency */,
+			);
+			name = FroccsTests;
+			productName = FroccsTests;
+			productReference = 5419AB472473326F00ECBEA3 /* FroccsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		1B0BFAF0233628850054E28A /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1100;
+				LastSwiftUpdateCheck = 1140;
 				LastUpgradeCheck = 1100;
 				ORGANIZATIONNAME = levivig;
 				TargetAttributes = {
 					1B0BFAF7233628850054E28A = {
 						CreatedOnToolsVersion = 11.0;
+					};
+					5419AB462473326F00ECBEA3 = {
+						CreatedOnToolsVersion = 11.4;
+						TestTargetID = 1B0BFAF7233628850054E28A;
 					};
 				};
 			};
@@ -434,6 +488,7 @@
 			projectRoot = "";
 			targets = (
 				1B0BFAF7233628850054E28A /* Froccs */,
+				5419AB462473326F00ECBEA3 /* FroccsTests */,
 			);
 		};
 /* End PBXProject section */
@@ -446,6 +501,13 @@
 				1B0BFB5A2336303F0054E28A /* Tabbar.storyboard in Resources */,
 				1B0BFB08233628870054E28A /* LaunchScreen.storyboard in Resources */,
 				1B0BFB05233628870054E28A /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5419AB452473326F00ECBEA3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -540,7 +602,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		5419AB432473326F00ECBEA3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5419AB4A2473326F00ECBEA3 /* FroccsTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5419AB4D2473326F00ECBEA3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1B0BFAF7233628850054E28A /* Froccs */;
+			targetProxy = 5419AB4C2473326F00ECBEA3 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		1B0BFB06233628870054E28A /* LaunchScreen.storyboard */ = {
@@ -708,6 +786,48 @@
 			};
 			name = Release;
 		};
+		5419AB4E2473326F00ECBEA3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = CSD326H7VF;
+				INFOPLIST_FILE = FroccsTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = eu.codeyard.FroccsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Froccs.app/Froccs";
+			};
+			name = Debug;
+		};
+		5419AB4F2473326F00ECBEA3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = CSD326H7VF;
+				INFOPLIST_FILE = FroccsTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = eu.codeyard.FroccsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Froccs.app/Froccs";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -725,6 +845,15 @@
 			buildConfigurations = (
 				1B0BFB23233628870054E28A /* Debug */,
 				1B0BFB24233628870054E28A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5419AB502473326F00ECBEA3 /* Build configuration list for PBXNativeTarget "FroccsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5419AB4E2473326F00ECBEA3 /* Debug */,
+				5419AB4F2473326F00ECBEA3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
