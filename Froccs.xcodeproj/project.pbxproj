@@ -33,7 +33,8 @@
 		1BB2479523E6EE8000EBFD39 /* DataExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BB2479423E6EE8000EBFD39 /* DataExtensions.swift */; };
 		1BDD46A223AFFEAE0020AC54 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BDD46A123AFFEAE0020AC54 /* Constants.swift */; };
 		5419AB4A2473326F00ECBEA3 /* FroccsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5419AB492473326F00ECBEA3 /* FroccsTests.swift */; };
-		543931E5247469AB001A18F8 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 543931E4247469AB001A18F8 /* RealmManager.swift */; };
+		543931F024746FC5001A18F8 /* UIFont+Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 543931EF24746FC5001A18F8 /* UIFont+Theme.swift */; };
+		543931FE2474768C001A18F8 /* UIColor+Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 543931FD2474768C001A18F8 /* UIColor+Theme.swift */; };
 		546E2C20245EDB8B003FDCE5 /* FroccsListInterfaces.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546E2C1B245EDB8B003FDCE5 /* FroccsListInterfaces.swift */; };
 		546E2C21245EDB8B003FDCE5 /* FroccsListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546E2C1C245EDB8B003FDCE5 /* FroccsListPresenter.swift */; };
 		546E2C22245EDB8B003FDCE5 /* FroccsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546E2C1D245EDB8B003FDCE5 /* FroccsListViewController.swift */; };
@@ -100,7 +101,8 @@
 		5419AB472473326F00ECBEA3 /* FroccsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FroccsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5419AB492473326F00ECBEA3 /* FroccsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FroccsTests.swift; sourceTree = "<group>"; };
 		5419AB4B2473326F00ECBEA3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		543931E4247469AB001A18F8 /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
+		543931EF24746FC5001A18F8 /* UIFont+Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Theme.swift"; sourceTree = "<group>"; };
+		543931FD2474768C001A18F8 /* UIColor+Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Theme.swift"; sourceTree = "<group>"; };
 		546E2C1B245EDB8B003FDCE5 /* FroccsListInterfaces.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FroccsListInterfaces.swift; sourceTree = "<group>"; };
 		546E2C1C245EDB8B003FDCE5 /* FroccsListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FroccsListPresenter.swift; sourceTree = "<group>"; };
 		546E2C1D245EDB8B003FDCE5 /* FroccsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FroccsListViewController.swift; sourceTree = "<group>"; };
@@ -190,6 +192,7 @@
 		1B0BFB2C2336293B0054E28A /* SupportingFiles */ = {
 			isa = PBXGroup;
 			children = (
+				543931E624746EFC001A18F8 /* Fonts */,
 				1B0BFB09233628870054E28A /* Info.plist */,
 			);
 			path = SupportingFiles;
@@ -288,6 +291,8 @@
 			isa = PBXGroup;
 			children = (
 				1BB2479423E6EE8000EBFD39 /* DataExtensions.swift */,
+				543931EF24746FC5001A18F8 /* UIFont+Theme.swift */,
+				543931FD2474768C001A18F8 /* UIColor+Theme.swift */,
 			);
 			path = Foundation;
 			sourceTree = "<group>";
@@ -327,6 +332,13 @@
 			path = FroccsTests;
 			sourceTree = "<group>";
 		};
+		543931E624746EFC001A18F8 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		546E2C1A245EDB78003FDCE5 /* FroccsList */ = {
 			isa = PBXGroup;
 			children = (
@@ -364,7 +376,6 @@
 			isa = PBXGroup;
 			children = (
 				546E2C3E245EFFBE003FDCE5 /* FroccsManager.swift */,
-				543931E4247469AB001A18F8 /* RealmManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -547,6 +558,7 @@
 				546E2C2B245EDE40003FDCE5 /* FroccsItemCell.swift in Sources */,
 				1B0BFB3D23362A000054E28A /* FormatterInterface.swift in Sources */,
 				546E2C2D245EDFCE003FDCE5 /* Froccs.swift in Sources */,
+				543931F024746FC5001A18F8 /* UIFont+Theme.swift in Sources */,
 				1B0BFAFC233628850054E28A /* AppDelegate.swift in Sources */,
 				1B0BFB562336303F0054E28A /* TabbarPresenter.swift in Sources */,
 				546E2C26245EDC30003FDCE5 /* BaseCollectionPresenter.swift in Sources */,
@@ -556,9 +568,9 @@
 				1B0BFB30233629890054E28A /* Initializable.swift in Sources */,
 				546E2C21245EDB8B003FDCE5 /* FroccsListPresenter.swift in Sources */,
 				1B0BFB4D23362F950054E28A /* LoggerInitializer.swift in Sources */,
-				543931E5247469AB001A18F8 /* RealmManager.swift in Sources */,
 				546E2C31245EE537003FDCE5 /* RateView.swift in Sources */,
 				1B0BFB582336303F0054E28A /* TabbarInterfaces.swift in Sources */,
+				543931FE2474768C001A18F8 /* UIColor+Theme.swift in Sources */,
 				1B0BFB3C23362A000054E28A /* InteractorInterface.swift in Sources */,
 				1B0BFB3A23362A000054E28A /* UIStoryboardExtension.swift in Sources */,
 				546E2C2F245EE017003FDCE5 /* Rate.swift in Sources */,

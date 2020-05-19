@@ -13,7 +13,11 @@ import UIKit
 final class FroccsDetailViewController: BaseTabbarProtocolController {
     
     override var tabbarImage: UIImage? {
-        UIImage(named: "water")
+        UIImage(named: "water")?.withRenderingMode(.alwaysOriginal)
+    }
+    
+    override var selectedTabbarImage: UIImage? {
+        UIImage(named: "water")?.withRenderingMode(.alwaysTemplate)
     }
 
     // MARK: - Public properties -

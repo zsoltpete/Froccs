@@ -38,6 +38,9 @@ class RateView: UIView {
     private func initWineLabel() {
         wineLabel = UILabel()
         
+        wineLabel.textColor = .darkYellow
+        wineLabel.font = .systemFont(ofSize: 14.0)
+        
         addSubview(wineLabel)
         wineLabel.snp.makeConstraints { make in
             make.leading.equalToSuperview().offset(0.0)
@@ -48,12 +51,14 @@ class RateView: UIView {
     private func initWineImageView() {
         wineImageView = UIImageView()
         
-        let image = UIImage(named: "wine")
+        let image = UIImage(named: "wine")?.withRenderingMode(.alwaysTemplate)
         wineImageView.image = image
+        
+        wineImageView.tintColor = .yellow
         
         addSubview(wineImageView)
         wineImageView.snp.makeConstraints { make in
-            make.leading.equalTo(wineLabel.snp.trailing).offset(2.0)
+            make.leading.equalTo(wineLabel.snp.trailing).offset(-1.0)
             make.centerY.equalToSuperview()
         }
     }
@@ -61,9 +66,12 @@ class RateView: UIView {
     private func initWaterLabel() {
         waterLabel = UILabel()
         
+        waterLabel.textColor = .darkBlue
+        waterLabel.font = .systemFont(ofSize: 14.0)
+        
         addSubview(waterLabel)
         waterLabel.snp.makeConstraints { make in
-            make.leading.equalTo(wineImageView.snp.trailing)
+            make.leading.equalTo(wineImageView.snp.trailing).offset(4.0)
             make.centerY.equalToSuperview()
         }
     }
@@ -71,12 +79,14 @@ class RateView: UIView {
     private func initWaterImageView() {
         waterImageView = UIImageView()
         
-        let image = UIImage(named: "water")
+        let image = UIImage(named: "water")?.withRenderingMode(.alwaysTemplate)
         waterImageView.image = image
+        
+        waterImageView.tintColor = .blue
         
         addSubview(waterImageView)
         waterImageView.snp.makeConstraints { make in
-            make.leading.equalTo(waterLabel.snp.trailing).offset(2.0)
+            make.leading.equalTo(waterLabel.snp.trailing).offset(-1.0)
             make.centerY.equalToSuperview()
             make.trailing.equalToSuperview()
         }
