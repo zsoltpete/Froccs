@@ -70,6 +70,10 @@ final class FroccsDetailViewController: BaseTabbarProtocolController {
         waterSlider.maximumValue = 10
         waterSlider.tag = 1
         
+        waterSlider.tintColor = .darkBlue
+        waterSlider.minimumTrackTintColor = .darkBlue
+        waterSlider.thumbTintColor = .darkBlue
+        
         waterSlider.addTarget(self, action: #selector(waterSliderChanged(_:)), for: .valueChanged)
         
         view.addSubview(waterSlider)
@@ -95,6 +99,10 @@ final class FroccsDetailViewController: BaseTabbarProtocolController {
         wineSlider.minimumValue = 0
         wineSlider.maximumValue = 10
         wineSlider.tag = 0
+        
+        wineSlider.tintColor = .darkYellow
+        wineSlider.minimumTrackTintColor = .darkYellow
+        wineSlider.thumbTintColor = .darkYellow
         
         wineSlider.addTarget(self, action: #selector(wineSliderChanged(_:)), for: .valueChanged)
         
