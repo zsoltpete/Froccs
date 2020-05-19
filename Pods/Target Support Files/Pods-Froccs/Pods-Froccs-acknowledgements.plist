@@ -14,6 +14,26 @@
 		</dict>
 		<dict>
 			<key>FooterText</key>
+			<string>DO NOT COPY!</string>
+			<key>License</key>
+			<string>MIT</string>
+			<key>Title</key>
+			<string>CYExtensions</string>
+			<key>Type</key>
+			<string>PSGroupSpecifier</string>
+		</dict>
+		<dict>
+			<key>FooterText</key>
+			<string>DO NOT COPY!</string>
+			<key>License</key>
+			<string>MIT</string>
+			<key>Title</key>
+			<string>CYLocalization</string>
+			<key>Type</key>
+			<string>PSGroupSpecifier</string>
+		</dict>
+		<dict>
+			<key>FooterText</key>
 			<string>Copyright (c) 2011-Present SnapKit Team - https://github.com/SnapKit
 
 Permission is hereby granted, free of charge, to any person obtaining a copy

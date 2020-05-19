@@ -1,0 +1,23 @@
+{
+  "name": "CYLocalization",
+  "version": "0.3.0",
+  "summary": "Swift library for easier localizations",
+  "homepage": "http://codeyard.eu",
+  "license": {
+    "type": "MIT",
+    "text": "DO NOT COPY!"
+  },
+  "authors": {
+    "iUjlaki": "iujlaki@codeyard.eu"
+  },
+  "source": {
+    "git": "https://bitbucket.org/team-codeyard/cylocalization.git",
+    "tag": "0.3.0"
+  },
+  "platforms": {
+    "ios": "8.0",
+    "tvos": "9.0"
+  },
+  "source_files": "Classes",
+  "frameworks": "UIKit"
+}

@@ -11,6 +11,8 @@ target 'Froccs' do
   # pod 'Alamofire', '5.0.0-beta.6'
   # pod 'AlamofireObjectMapper', '~> 6.1.0'
   # pod 'Crashlytics'
+  pod 'CYExtensions', :git => 'git@bitbucket.org:team-codeyard/cyextensions.git', :branch => 'master'
+  pod 'CYLocalization', :git => 'git@bitbucket.org:team-codeyard/cylocalization.git', :branch => 'master'
   # pod 'Fabric'
   # pod 'Firebase/Analytics'
   # pod 'ObjectMapper'

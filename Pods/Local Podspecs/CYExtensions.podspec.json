@@ -1,0 +1,24 @@
+{
+  "name": "CYExtensions",
+  "version": "0.2.4.1",
+  "summary": "Extension collection for better development",
+  "homepage": "http://codeyard.eu",
+  "license": {
+    "type": "MIT",
+    "text": "DO NOT COPY!"
+  },
+  "authors": {
+    "petez": "pete.zsolt@codeyard.eu"
+  },
+  "source": {
+    "git": "https://bitbucket.org/team-codeyard/cyextensions.git",
+    "tag": "0.2.4.1"
+  },
+  "platforms": {
+    "ios": "10.0"
+  },
+  "source_files": "CYExtensions/Sources",
+  "frameworks": "UIKit",
+  "swift_versions": "5.0",
+  "swift_version": "5.0"
+}

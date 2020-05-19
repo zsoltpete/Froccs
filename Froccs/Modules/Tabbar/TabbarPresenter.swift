@@ -42,7 +42,8 @@ extension TabbarPresenter: TabbarPresenterInterface {
     
     func setupViewControllers() -> [UIViewController] {
         let controllers: [UIViewController] = [
-            FroccsListWireframe().viewController
+            FroccsListWireframe().viewController,
+            FroccsDetailWireframe(nil).viewController
         ]
         
         return controllers

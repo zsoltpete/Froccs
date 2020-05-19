@@ -10,7 +10,11 @@
 
 import UIKit
 
-final class FroccsDetailViewController: BaseViewController {
+final class FroccsDetailViewController: BaseTabbarProtocolController {
+    
+    override var tabbarImage: UIImage? {
+        UIImage(named: "water")
+    }
 
     // MARK: - Public properties -
 
@@ -26,7 +30,9 @@ final class FroccsDetailViewController: BaseViewController {
     private var scrollView: UIScrollView!
     private var titleLabel: UILabel!
     private var descLabel: UILabel!
-
+    
+    private var separatorView: UIView!
+    
     // MARK: - Lifecycle -
 
     override func viewDidLoad() {
@@ -34,6 +40,12 @@ final class FroccsDetailViewController: BaseViewController {
         setup()
         
         presenter.viewDidLoad()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        presenter.viewWillAppear(animated: animated)
     }
     
     private func setup() {
@@ -44,6 +56,7 @@ final class FroccsDetailViewController: BaseViewController {
         initScrollView()
         initTitleLabel()
         initDescLabel()
+        initSeparatorView()
     }
     
     private func initWaterSlider() {
@@ -58,7 +71,7 @@ final class FroccsDetailViewController: BaseViewController {
         view.addSubview(waterSlider)
         waterSlider.snp.makeConstraints { make in
             make.trailing.equalToSuperview().offset(-20.0)
-            make.bottom.equalTo(view.safeAreaLayoutGuide)
+            make.bottom.equalTo(view.safeAreaLayoutGuide).offset(-16.0)
             make.width.equalToSuperview().multipliedBy(0.65)
         }
     }
@@ -147,12 +160,27 @@ final class FroccsDetailViewController: BaseViewController {
     private func initDescLabel() {
         descLabel = UILabel()
         
+        descLabel.numberOfLines = 0
+        
         scrollView.addSubview(descLabel)
         descLabel.snp.makeConstraints { make in
             make.leading.equalToSuperview().offset(20.0)
             make.centerX.equalToSuperview()
             make.top.equalTo(titleLabel.snp.bottom).offset(20.0)
             make.bottom.equalToSuperview()
+        }
+    }
+    
+    private func initSeparatorView() {
+        separatorView = UIView()
+        
+        separatorView.backgroundColor = .gray
+        
+        view.addSubview(separatorView)
+        separatorView.snp.makeConstraints { make in
+            make.leading.centerX.equalToSuperview()
+            make.height.equalTo(1.0)
+            make.bottom.equalTo(wineSlider.snp.top).offset(-16.0)
         }
     }
     

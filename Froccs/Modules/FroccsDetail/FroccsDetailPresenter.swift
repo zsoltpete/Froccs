@@ -21,7 +21,6 @@ final class FroccsDetailPresenter {
     private var froccs: Froccs?
     private var changingRate: Rate?
 
-
     // MARK: - Lifecycle -
 
     init(view: FroccsDetailViewInterface, interactor: FroccsDetailInteractorInterface, wireframe: FroccsDetailWireframeInterface, froccs: Froccs?) {
@@ -32,18 +31,25 @@ final class FroccsDetailPresenter {
     }
     
     func viewDidLoad() {
-        view.setTitle("Részletek")
         view.setWineSlider(to: froccs?.rate?.wine)
         view.setWaterSlider(to: froccs?.rate?.water)
         changingRate = Rate(wine: froccs?.rate?.wine, water: froccs?.rate?.water)
         updateView()
     }
     
+    func viewWillAppear(animated: Bool) {
+        view.setTitle("Részletek")
+    }
+    
     private func updateView() {
-        view.setTitleLabel(froccs?.title)
-        view.setDescription(froccs?.desc)
-        view.setWineCoounter(to: froccs?.rate?.wine)
-        view.setWaterCoounter(to: froccs?.rate?.water)
+        let wine = froccs?.title ?? "Vegyes"
+        let desc = froccs?.desc ?? "Keverj valami jobbat. Ez sajnos nincs a listában"
+        let wineRate = froccs?.rate?.wine ?? (changingRate?.wine ?? 0)
+        let waterRate = froccs?.rate?.water ?? (changingRate?.water ?? 0)
+        view.setTitleLabel(wine)
+        view.setDescription(desc)
+        view.setWineCoounter(to: wineRate)
+        view.setWaterCoounter(to: waterRate)
     }
     
     private func updateFroccs() {
