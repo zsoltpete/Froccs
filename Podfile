@@ -17,7 +17,6 @@ target 'Froccs' do
   # pod 'Firebase/Analytics'
   # pod 'ObjectMapper'
   # pod 'SDWebImage'
-  pod 'RealmSwift'
   pod 'SnapKit'
   pod 'SwifterSwift'
   pod 'SwiftLint'
