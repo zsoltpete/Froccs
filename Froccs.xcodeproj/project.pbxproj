@@ -33,6 +33,7 @@
 		1BB2479523E6EE8000EBFD39 /* DataExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BB2479423E6EE8000EBFD39 /* DataExtensions.swift */; };
 		1BDD46A223AFFEAE0020AC54 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BDD46A123AFFEAE0020AC54 /* Constants.swift */; };
 		5419AB4A2473326F00ECBEA3 /* FroccsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5419AB492473326F00ECBEA3 /* FroccsTests.swift */; };
+		543931E5247469AB001A18F8 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 543931E4247469AB001A18F8 /* RealmManager.swift */; };
 		546E2C20245EDB8B003FDCE5 /* FroccsListInterfaces.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546E2C1B245EDB8B003FDCE5 /* FroccsListInterfaces.swift */; };
 		546E2C21245EDB8B003FDCE5 /* FroccsListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546E2C1C245EDB8B003FDCE5 /* FroccsListPresenter.swift */; };
 		546E2C22245EDB8B003FDCE5 /* FroccsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546E2C1D245EDB8B003FDCE5 /* FroccsListViewController.swift */; };
@@ -99,6 +100,7 @@
 		5419AB472473326F00ECBEA3 /* FroccsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FroccsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5419AB492473326F00ECBEA3 /* FroccsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FroccsTests.swift; sourceTree = "<group>"; };
 		5419AB4B2473326F00ECBEA3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		543931E4247469AB001A18F8 /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
 		546E2C1B245EDB8B003FDCE5 /* FroccsListInterfaces.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FroccsListInterfaces.swift; sourceTree = "<group>"; };
 		546E2C1C245EDB8B003FDCE5 /* FroccsListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FroccsListPresenter.swift; sourceTree = "<group>"; };
 		546E2C1D245EDB8B003FDCE5 /* FroccsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FroccsListViewController.swift; sourceTree = "<group>"; };
@@ -362,6 +364,7 @@
 			isa = PBXGroup;
 			children = (
 				546E2C3E245EFFBE003FDCE5 /* FroccsManager.swift */,
+				543931E4247469AB001A18F8 /* RealmManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -553,6 +556,7 @@
 				1B0BFB30233629890054E28A /* Initializable.swift in Sources */,
 				546E2C21245EDB8B003FDCE5 /* FroccsListPresenter.swift in Sources */,
 				1B0BFB4D23362F950054E28A /* LoggerInitializer.swift in Sources */,
+				543931E5247469AB001A18F8 /* RealmManager.swift in Sources */,
 				546E2C31245EE537003FDCE5 /* RateView.swift in Sources */,
 				1B0BFB582336303F0054E28A /* TabbarInterfaces.swift in Sources */,
 				1B0BFB3C23362A000054E28A /* InteractorInterface.swift in Sources */,
