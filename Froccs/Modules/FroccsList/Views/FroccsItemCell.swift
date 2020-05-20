@@ -41,6 +41,8 @@ class FroccsItemCell: UITableViewCell {
     private func initTitleLabel() {
         titleLabel = UILabel()
         
+        titleLabel.font = .systemFont(ofSize: 15.0)
+        
         contentView.addSubview(titleLabel)
         titleLabel.snp.makeConstraints { make in
             make.leading.equalToSuperview().offset(20.0)

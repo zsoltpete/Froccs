@@ -36,6 +36,7 @@ final class FroccsDetailViewController: BaseTabbarProtocolController {
     private var descLabel: UILabel!
     
     private var separatorView: UIView!
+    private var scoreView: ScoreView!
     
     // MARK: - Lifecycle -
 
@@ -50,6 +51,7 @@ final class FroccsDetailViewController: BaseTabbarProtocolController {
         super.viewWillAppear(animated)
         
         presenter.viewWillAppear(animated: animated)
+        scoreView.start(0.85)
     }
     
     private func setup() {
@@ -61,6 +63,7 @@ final class FroccsDetailViewController: BaseTabbarProtocolController {
         initTitleLabel()
         initDescLabel()
         initSeparatorView()
+        initScoreView()
     }
     
     private func initWaterSlider() {
@@ -193,6 +196,17 @@ final class FroccsDetailViewController: BaseTabbarProtocolController {
             make.leading.centerX.equalToSuperview()
             make.height.equalTo(1.0)
             make.bottom.equalTo(wineSlider.snp.top).offset(-16.0)
+        }
+    }
+    
+    private func initScoreView() {
+        scoreView = ScoreView()
+        
+        scrollView.addSubview(scoreView)
+        scoreView.snp.makeConstraints { make in
+            make.top.equalTo(descLabel.snp.bottom).offset(20.0)
+            make.centerX.leading.equalToSuperview()
+            make.height.equalTo(300.0)
         }
     }
     

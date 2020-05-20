@@ -1,6 +1,7 @@
 PODS:
   - CYExtensions (0.2.4.1)
   - CYLocalization (0.3.0)
+  - lottie-ios (3.1.8)
   - SnapKit (5.0.1)
   - SwifterSwift (5.2.0):
     - SwifterSwift/AppKit (= 5.2.0)
@@ -33,6 +34,7 @@ PODS:
 DEPENDENCIES:
   - "CYExtensions (from `git@bitbucket.org:team-codeyard/cyextensions.git`, branch `master`)"
   - "CYLocalization (from `git@bitbucket.org:team-codeyard/cylocalization.git`, branch `master`)"
+  - lottie-ios
   - SnapKit
   - SwifterSwift
   - SwiftLint
@@ -40,6 +42,7 @@ DEPENDENCIES:
 
 SPEC REPOS:
   trunk:
+    - lottie-ios
     - SnapKit
     - SwifterSwift
     - SwiftLint
@@ -64,11 +67,12 @@ CHECKOUT OPTIONS:
 SPEC CHECKSUMS:
   CYExtensions: 3f30ce67467735b1d436ae6c9f7f7aff81f19436
   CYLocalization: 69c4d378ad7904fe846dfa35a9c22a728a62dd5b
+  lottie-ios: 48fac6be217c76937e36e340e2d09cf7b10b7f5f
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
   SwifterSwift: 334181863c416882d97b7a60c05054d9e4d799e2
   SwiftLint: 22ccbbe3b8008684be5955693bab135e0ed6a447
   SwiftyBeaver: a1f5691458561414bcfab51874b2b7445451602b
 
-PODFILE CHECKSUM: 2b6cacdfc8e36c164b999c2d5ae801b156dcfecd
+PODFILE CHECKSUM: 8aa2b22ef0aaa565c48951e29f023a7431ad8107
 
 COCOAPODS: 1.9.1
