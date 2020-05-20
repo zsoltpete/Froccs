@@ -13,11 +13,11 @@ import UIKit
 final class FroccsDetailViewController: BaseTabbarProtocolController {
     
     override var tabbarImage: UIImage? {
-        UIImage(named: "water")?.withRenderingMode(.alwaysOriginal)
+        UIImage(named: "water_colored")?.withRenderingMode(.alwaysTemplate)
     }
     
     override var selectedTabbarImage: UIImage? {
-        UIImage(named: "water")?.withRenderingMode(.alwaysTemplate)
+        UIImage(named: "water_colored")?.withRenderingMode(.alwaysOriginal)
     }
 
     // MARK: - Public properties -
@@ -51,7 +51,7 @@ final class FroccsDetailViewController: BaseTabbarProtocolController {
         super.viewWillAppear(animated)
         
         presenter.viewWillAppear(animated: animated)
-        scoreView.start(0.85)
+        scoreView.start(0.0)
     }
     
     private func setup() {

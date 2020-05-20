@@ -20,7 +20,7 @@ final class TabbarViewController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        tabBar.tintColor = .yellow
+        tabBar.tintColor = .black
         tabBar.unselectedItemTintColor = .black
         delegate = self
         presenter.viewDidLoad()

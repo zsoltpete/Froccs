@@ -17,11 +17,11 @@ import UIKit
 final class FroccsListViewController: BaseTabbarProtocolController {
 
     override var tabbarImage: UIImage? {
-        UIImage(named: "wine")?.withRenderingMode(.alwaysOriginal)
+        UIImage(named: "wine_colored")?.withRenderingMode(.alwaysTemplate)
     }
     
     override var selectedTabbarImage: UIImage? {
-        UIImage(named: "wine")?.withRenderingMode(.alwaysTemplate)
+        UIImage(named: "wine_colored")?.withRenderingMode(.alwaysOriginal)
     }
     
     // MARK: - Public properties -

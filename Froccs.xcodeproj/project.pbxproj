@@ -54,6 +54,7 @@
 		546E2C3F245EFFBE003FDCE5 /* FroccsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546E2C3E245EFFBE003FDCE5 /* FroccsManager.swift */; };
 		54865CCC2475BF4500453C7D /* ScoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54865CCB2475BF4500453C7D /* ScoreView.swift */; };
 		54A4CB3C2475C0B800DA6DC6 /* glass.json in Resources */ = {isa = PBXBuildFile; fileRef = 54A4CB3B2475C0B800DA6DC6 /* glass.json */; };
+		54A4CB3E2475D41200DA6DC6 /* glass2.json in Resources */ = {isa = PBXBuildFile; fileRef = 54A4CB3D2475D41200DA6DC6 /* glass2.json */; };
 		F6CECDC83E7FBBA684DFF685 /* Pods_Froccs.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D1B61EADA8286B2824C37F1 /* Pods_Froccs.framework */; };
 /* End PBXBuildFile section */
 
@@ -124,6 +125,7 @@
 		546E2C3E245EFFBE003FDCE5 /* FroccsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FroccsManager.swift; sourceTree = "<group>"; };
 		54865CCB2475BF4500453C7D /* ScoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreView.swift; sourceTree = "<group>"; };
 		54A4CB3B2475C0B800DA6DC6 /* glass.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = glass.json; sourceTree = "<group>"; };
+		54A4CB3D2475D41200DA6DC6 /* glass2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = glass2.json; sourceTree = "<group>"; };
 		9C0B7910D5B3D654CE3114A2 /* Pods-TemplateUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TemplateUITests.debug.xcconfig"; path = "Target Support Files/Pods-TemplateUITests/Pods-TemplateUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		9D1B61EADA8286B2824C37F1 /* Pods_Froccs.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Froccs.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA1C71581E8FB7D1071CE22E /* Pods_TemplateUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TemplateUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -389,6 +391,7 @@
 		54A4CB3A2475C06B00DA6DC6 /* Animations */ = {
 			isa = PBXGroup;
 			children = (
+				54A4CB3D2475D41200DA6DC6 /* glass2.json */,
 				54A4CB3B2475C0B800DA6DC6 /* glass.json */,
 			);
 			path = Animations;
@@ -502,6 +505,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				54A4CB3E2475D41200DA6DC6 /* glass2.json in Resources */,
 				54A4CB3C2475C0B800DA6DC6 /* glass.json in Resources */,
 				1B0BFB5A2336303F0054E28A /* Tabbar.storyboard in Resources */,
 				1B0BFB08233628870054E28A /* LaunchScreen.storyboard in Resources */,
