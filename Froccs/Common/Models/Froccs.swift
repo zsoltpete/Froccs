@@ -15,13 +15,15 @@ class Froccs: BaseResponse  {
     var percentage: Double?
     var history: String?
     var rate: Rate?
+    var userValue: Int?
     
-    init(name: String?, desc: String?, rate: Rate?, percentage: Double?, history: String?) {
+    init(name: String?, desc: String?, rate: Rate?, percentage: Double?, history: String?, userValue: Int?) {
         self.name = name
         self.desc = desc
         self.rate = rate
         self.history = history
         self.percentage = percentage
+        self.userValue = userValue
     }
     
     init(froccs: Froccs) {
@@ -30,6 +32,7 @@ class Froccs: BaseResponse  {
         self.rate = froccs.rate
         self.percentage = froccs.percentage
         self.history = froccs.history
+        self.userValue = froccs.userValue
     }
     
 }

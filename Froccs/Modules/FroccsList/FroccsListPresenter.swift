@@ -33,6 +33,15 @@ final class FroccsListPresenter {
     }
     
     func viewDidLoad() {
+        
+    }
+    
+    func viewWillAppear(animated: Bool) {
+        view.setTitle("Fröccsök")
+        refreshList()
+    }
+    
+    private func refreshList() {
         interactor.getFroccss { result in
             switch result {
             case .success(let items):
@@ -41,10 +50,6 @@ final class FroccsListPresenter {
                 log.error(error.localizedDescription)
             }
         }
-    }
-    
-    func viewWillAppear(animated: Bool) {
-        view.setTitle("Fröccsök")
     }
 }
 

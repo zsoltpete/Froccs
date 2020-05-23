@@ -85,6 +85,25 @@ final class FroccsDetailPresenter {
 // MARK: - Extensions -
 
 extension FroccsDetailPresenter: FroccsDetailPresenterInterface {
+    func getUserValue() -> Int {
+        froccs?.userValue ?? 0
+    }
+    
+    func saveUserValue(_ value: Int) {
+        froccs?.userValue = value
+        guard let froccs = froccs else {
+            return
+        }
+        DatabaseManager.shared.update(froccs) { (froccs, error) in
+            if let error = error {
+                
+            } else if let froccs = froccs {
+                
+            }
+        }
+        FroccsManager.shared.update()
+    }
+    
     func headerItem(at section: Int) -> CellBindable {
         headerTitles[section]
     }

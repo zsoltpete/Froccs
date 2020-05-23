@@ -12,11 +12,13 @@ import UIKit
 
 typealias BoolCompletition = (Bool) -> Void
 typealias FroccsErrorCompletion = ([Froccs]?, Error?) -> Void
+typealias FroccsEntityErrorCompletion = (Froccs?, Error?) -> Void
 
 protocol DatabaseManaging {
     func removeAll()
     func loadEntities(completion: FroccsErrorCompletion)
     func initEntity(row: Row) -> Froccs
+    func update(_ entity: Froccs, completion: FroccsEntityErrorCompletion)
 }
 
 class DatabaseManager {
@@ -34,6 +36,7 @@ class DatabaseManager {
     fileprivate let history = Expression<String?>("history")
     fileprivate let wineRate = Expression<Int?>("wineRate")
     fileprivate let waterRate = Expression<Int?>("waterRate")
+    fileprivate let userValue = Expression<Int?>("userValue")
     
     private init() {
         self.openIfNeeded()
@@ -101,7 +104,8 @@ extension DatabaseManager: DatabaseManaging {
         let rate = Rate(wine: wineRate, water: waterRate)
         let percentage = row[self.percentage]
         let history = row[self.history]
-        let entity = Froccs(name: name, desc: desc, rate: rate, percentage: percentage, history: history)
+        let userValue = row[self.userValue]
+        let entity = Froccs(name: name, desc: desc, rate: rate, percentage: percentage, history: history, userValue: userValue)
         return entity
     }
     
@@ -136,6 +140,18 @@ extension DatabaseManager: DatabaseManaging {
             return
         }
         completion(entityList, nil)
+    }
+    
+    func update(_ entity: Froccs, completion: FroccsEntityErrorCompletion) {
+        let query = list.filter(name == entity.name)
+        do {
+            try db?.run(query.update(userValue <- entity.userValue))
+            completion(entity, nil)
+        } catch {
+            completion(nil, error)
+            return
+        }
+        
     }
     
 }

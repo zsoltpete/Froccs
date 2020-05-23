@@ -35,7 +35,6 @@ final class FroccsDetailViewController: BaseTabbarProtocolController {
     private var tableView: UITableView!
     
     private var separatorView: UIView!
-    private var scoreView: ScoreView!
     
     // MARK: - Lifecycle -
 
@@ -60,7 +59,6 @@ final class FroccsDetailViewController: BaseTabbarProtocolController {
         initWaterCounterLabel()
         initSeparatorView()
         initTableView()
-//        initScoreView()
     }
     
     private func initWaterSlider() {
@@ -183,18 +181,6 @@ final class FroccsDetailViewController: BaseTabbarProtocolController {
         }
     }
     
-    private func initScoreView() {
-        scoreView = ScoreView()
-        scoreView.backgroundColor = .purple
-        
-        view.addSubview(scoreView)
-        scoreView.snp.makeConstraints { make in
-            make.bottom.equalTo(separatorView)
-            make.centerX.leading.equalToSuperview()
-            make.height.equalTo(300.0)
-        }
-    }
-    
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
     }
@@ -204,6 +190,7 @@ final class FroccsDetailViewController: BaseTabbarProtocolController {
 // MARK: - Extensions -
 
 extension FroccsDetailViewController: FroccsDetailViewInterface {
+    
     func reloadList() {
         tableView.reloadData()
     }
@@ -260,7 +247,8 @@ extension FroccsDetailViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         let footer = ScoreView()
-        
+        footer.setUserValue(presenter.getUserValue())
+        footer.delegate = self
         footer.frame = CGRect(x: 0, y: 0, width: tableView.width, height: 300.0)
         
         return footer
@@ -281,4 +269,12 @@ extension FroccsDetailViewController: TBEmptyDataSetDataSource {
         
         return view
     }
+}
+
+extension FroccsDetailViewController: ScoreViewDelegate {
+    
+    func confirmValue(_ value: Int) {
+        presenter.saveUserValue(value)
+    }
+    
 }

@@ -24,6 +24,8 @@ protocol FroccsDetailPresenterInterface: BaseCollectionPresenter {
     func wineSliderChanged(_ value: Int)
     func waterSliderChanged(_ value: Int)
     func headerItem(at section: Int) -> CellBindable
+    func saveUserValue(_ value: Int)
+    func getUserValue() -> Int
 }
 
 protocol FroccsDetailInteractorInterface: InteractorInterface {

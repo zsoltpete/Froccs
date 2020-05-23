@@ -9,18 +9,28 @@
 import Lottie
 import UIKit
 
+protocol ScoreViewDelegate: class {
+    func confirmValue(_ value: Int)
+}
+
 class ScoreView: UIView {
+    
+    // MARK: - Public properties -
+    
+    weak var delegate: ScoreViewDelegate?
     
     // MARK: - Private properties -
     
     private var animationView: AnimationView!
     private var scoreLabel: UILabel!
     
-    private var current = 0.0
-    private var from = 0.0
+    private var currentUnit = 0.0
+    private var fromUnit = 0.0
     
     private var maxProgress = 0.6
     private var unit = 5.0
+    
+    private var percent = 0
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -70,6 +80,25 @@ class ScoreView: UIView {
     private func initGestureRecognizer() {
         let pan = UIPanGestureRecognizer(target: self, action: #selector(panned(_:)))
         animationView.addGestureRecognizer(pan)
+        
+        let doubleTap = UITapGestureRecognizer(target: self, action: #selector(doubleTapped))
+        doubleTap.numberOfTapsRequired = 2
+        animationView.addGestureRecognizer(doubleTap)
+    }
+    
+    @objc
+    private func doubleTapped() {
+        let backUp = animationView.currentProgress
+        delegate?.confirmValue(percent)
+        animationView.play(fromProgress: backUp, toProgress: 0.85, loopMode: .playOnce) { [weak self]finished in
+            if finished {
+                self?.animationView.play(fromProgress: 0.85, toProgress: backUp, loopMode: .playOnce) { finished in
+                    if finished {
+                        
+                    }
+                }
+            }
+        }
     }
     
     @objc
@@ -88,12 +117,12 @@ class ScoreView: UIView {
             
             if case .down = gestureRecognizer.verticalDirection(target: self) {
                 log.debug("Swiping down")
-                from = current
-                current = max(0, current - 1)
+                fromUnit = currentUnit
+                currentUnit = max(0, currentUnit - 1)
             } else {
                 log.debug("Swiping up")
-                from = current
-                current = min(unit, current + 1)
+                fromUnit = currentUnit
+                currentUnit = min(unit, currentUnit + 1)
             }
             updateAnimation()
             
@@ -106,9 +135,10 @@ class ScoreView: UIView {
     
     private func updateAnimation() {
         isUserInteractionEnabled = false
-        let percent = String(format: "%d%%", Int(1.0 / unit * current * 100))
-        scoreLabel.text = percent
-        animationView.play(fromProgress: AnimationProgressTime(maxProgress / unit * from), toProgress: AnimationProgressTime(maxProgress / unit * current), loopMode: .none) { [weak self]finished in
+         percent = Int(1.0 / unit * currentUnit * 100)
+        let percentString = String(format: "%d%%", percent)
+        scoreLabel.text = percentString
+        animationView.play(fromProgress: AnimationProgressTime(maxProgress / unit * fromUnit), toProgress: AnimationProgressTime(maxProgress / unit * currentUnit), loopMode: .none) { [weak self]finished in
             if finished {
                 self?.isUserInteractionEnabled = true
             }
@@ -116,15 +146,23 @@ class ScoreView: UIView {
     }
     
     func start(_ toProgress: Double) {
-        current = min(1, current)
-        current = toProgress
-        animationView.play(toProgress: AnimationProgressTime(min(current, maxProgress)))
-        let percent = String(format: "%d%%", Int(1.0 / unit * current * 100))
+        currentUnit = min(1, currentUnit)
+        currentUnit = toProgress
+        animationView.play(toProgress: AnimationProgressTime(min(currentUnit, maxProgress)))
+        let percent = String(format: "%d%%", Int(1.0 / unit * currentUnit * 100))
         scoreLabel.text = percent
     }
     
     func stop() {
         animationView.stop()
+    }
+    
+    func setUserValue(_ value: Int) {
+        percent = value
+        let percentString = String(format: "%d%%", percent)
+        scoreLabel.text = percentString
+        currentUnit = Double(percent) / 100.0 * unit
+        animationView.play(toProgress: AnimationProgressTime(maxProgress / unit * currentUnit))
     }
     
     override func layoutSubviews() {
