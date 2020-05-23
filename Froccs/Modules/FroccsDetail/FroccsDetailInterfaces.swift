@@ -13,18 +13,17 @@ import UIKit
 protocol FroccsDetailWireframeInterface: WireframeInterface {
 }
 
-protocol FroccsDetailViewInterface: ViewInterface {
+protocol FroccsDetailViewInterface: BaseCollectionViewInterface {
     func setWineSlider(to wine: Int?)
     func setWaterSlider(to water: Int?)
-    func setTitleLabel(_ title: String?)
-    func setDescription(_ desc: String?)
     func setWineCoounter(to water: Int?)
     func setWaterCoounter(to water: Int?)
 }
 
-protocol FroccsDetailPresenterInterface: PresenterInterface {
+protocol FroccsDetailPresenterInterface: BaseCollectionPresenter {
     func wineSliderChanged(_ value: Int)
     func waterSliderChanged(_ value: Int)
+    func headerItem(at section: Int) -> CellBindable
 }
 
 protocol FroccsDetailInteractorInterface: InteractorInterface {

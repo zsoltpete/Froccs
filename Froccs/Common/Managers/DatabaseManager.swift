@@ -30,6 +30,8 @@ class DatabaseManager {
     fileprivate let list = Table("list")
     fileprivate let name = Expression<String?>("name")
     fileprivate let desc = Expression<String?>("desc")
+    fileprivate let percentage = Expression<Double?>("percentage")
+    fileprivate let history = Expression<String?>("history")
     fileprivate let wineRate = Expression<Int?>("wineRate")
     fileprivate let waterRate = Expression<Int?>("waterRate")
     
@@ -97,7 +99,9 @@ extension DatabaseManager: DatabaseManaging {
         let wineRate = row[self.wineRate]
         let waterRate = row[self.waterRate]
         let rate = Rate(wine: wineRate, water: waterRate)
-        let entity = Froccs(name: name, desc: desc, rate: rate)
+        let percentage = row[self.percentage]
+        let history = row[self.history]
+        let entity = Froccs(name: name, desc: desc, rate: rate, percentage: percentage, history: history)
         return entity
     }
     

@@ -11,18 +11,26 @@
 import UIKit
 
 final class FroccsDetailPresenter {
-
+    
     // MARK: - Private properties -
-
+    
     private unowned let view: FroccsDetailViewInterface
     private let interactor: FroccsDetailInteractorInterface
     private let wireframe: FroccsDetailWireframeInterface
     
     private var froccs: Froccs?
     private var changingRate: Rate?
-
+    
+    private var items = [[String]]() {
+        didSet {
+            view.reloadList()
+        }
+    }
+    
+    private var headerTitles = [String]()
+    
     // MARK: - Lifecycle -
-
+    
     init(view: FroccsDetailViewInterface, interactor: FroccsDetailInteractorInterface, wireframe: FroccsDetailWireframeInterface, froccs: Froccs?) {
         self.view = view
         self.interactor = interactor
@@ -35,10 +43,10 @@ final class FroccsDetailPresenter {
         view.setWaterSlider(to: froccs?.rate?.water)
         changingRate = Rate(wine: froccs?.rate?.wine, water: froccs?.rate?.water)
         updateView()
+        createItems()
     }
     
     func viewWillAppear(animated: Bool) {
-        view.setTitle("Részletek")
     }
     
     private func updateView() {
@@ -46,10 +54,26 @@ final class FroccsDetailPresenter {
         let desc = froccs?.desc ?? "Keverj valami jobbat. Ez sajnos nincs a listában"
         let wineRate = froccs?.rate?.wine ?? (changingRate?.wine ?? 0)
         let waterRate = froccs?.rate?.water ?? (changingRate?.water ?? 0)
-        view.setTitleLabel(wine)
-        view.setDescription(desc)
         view.setWineCoounter(to: wineRate)
         view.setWaterCoounter(to: waterRate)
+        view.setTitle(wine)
+    }
+    
+    private func createItems() {
+        var items = [[String]]()
+        if let history = froccs?.history {
+            items.append([history])
+            headerTitles.append("Történet:")
+        }
+        if let desc = froccs?.desc {
+            items.append([desc])
+            headerTitles.append("Leírás:")
+        }
+        if let percentage = froccs?.percentage {
+            items.append(["\(percentage)%"])
+            headerTitles.append("Százaléka:")
+        }
+        self.items = items
     }
     
     private func updateFroccs() {
@@ -61,6 +85,26 @@ final class FroccsDetailPresenter {
 // MARK: - Extensions -
 
 extension FroccsDetailPresenter: FroccsDetailPresenterInterface {
+    func headerItem(at section: Int) -> CellBindable {
+        headerTitles[section]
+    }
+    
+    func numberOfSections() -> Int {
+        items.count
+    }
+    
+    func numberOfItem(in section: Int) -> Int {
+        1
+    }
+    
+    func itemForRow(at indexPath: IndexPath) -> CellBindable {
+        items[indexPath.section][indexPath.row]
+    }
+    
+    func selectItem(at indexPath: IndexPath) {
+        
+    }
+    
     func wineSliderChanged(_ value: Int) {
         changingRate?.wine = value
         updateFroccs()
@@ -70,5 +114,9 @@ extension FroccsDetailPresenter: FroccsDetailPresenterInterface {
         changingRate?.water = value
         updateFroccs()
     }
+    
+}
+
+extension String: CellBindable {
     
 }

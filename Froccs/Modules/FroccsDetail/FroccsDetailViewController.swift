@@ -31,9 +31,7 @@ final class FroccsDetailViewController: BaseTabbarProtocolController {
     private var wineCounterLabel: UILabel!
     private var waterCounterLabel: UILabel!
     
-    private var scrollView: UIScrollView!
-    private var titleLabel: UILabel!
-    private var descLabel: UILabel!
+    private var tableView: UITableView!
     
     private var separatorView: UIView!
     private var scoreView: ScoreView!
@@ -51,7 +49,7 @@ final class FroccsDetailViewController: BaseTabbarProtocolController {
         super.viewWillAppear(animated)
         
         presenter.viewWillAppear(animated: animated)
-        scoreView.start(0.0)
+//        scoreView.start(0.0)
     }
     
     private func setup() {
@@ -59,11 +57,9 @@ final class FroccsDetailViewController: BaseTabbarProtocolController {
         initWineSlider()
         initWineCounterLabel()
         initWaterCounterLabel()
-        initScrollView()
-        initTitleLabel()
-        initDescLabel()
         initSeparatorView()
-        initScoreView()
+        initTableView()
+//        initScoreView()
     }
     
     private func initWaterSlider() {
@@ -146,46 +142,6 @@ final class FroccsDetailViewController: BaseTabbarProtocolController {
         }
     }
     
-    private func initScrollView() {
-        scrollView = UIScrollView()
-        
-        view.addSubview(scrollView)
-        scrollView.snp.makeConstraints { make in
-            make.bottom.equalTo(wineSlider.snp.top)
-            make.leading.equalToSuperview()
-            make.centerX.equalToSuperview()
-            make.top.equalTo(view.safeAreaLayoutGuide)
-        }
-    }
-    
-    private func initTitleLabel() {
-        titleLabel = UILabel()
-        
-        titleLabel.numberOfLines = 0
-        titleLabel.textAlignment = .center
-        
-        scrollView.addSubview(titleLabel)
-        titleLabel.snp.makeConstraints { make in
-            make.centerX.equalToSuperview()
-            make.leading.equalToSuperview().offset(20.0)
-            make.top.equalToSuperview().offset(20.0)
-        }
-    }
-    
-    private func initDescLabel() {
-        descLabel = UILabel()
-        
-        descLabel.numberOfLines = 0
-        
-        scrollView.addSubview(descLabel)
-        descLabel.snp.makeConstraints { make in
-            make.leading.equalToSuperview().offset(20.0)
-            make.centerX.equalToSuperview()
-            make.top.equalTo(titleLabel.snp.bottom).offset(20.0)
-            make.bottom.equalToSuperview()
-        }
-    }
-    
     private func initSeparatorView() {
         separatorView = UIView()
         
@@ -199,12 +155,32 @@ final class FroccsDetailViewController: BaseTabbarProtocolController {
         }
     }
     
+    private func initTableView() {
+        tableView = UITableView(frame: .zero, style: .grouped)
+        tableView.register(cellWithClass: DetailCell.self)
+        tableView.register(headerFooterViewClassWith: DetailHeaderCell.self)
+        tableView.dataSource = self
+        tableView.delegate = self
+        tableView.separatorStyle = .none
+        
+        tableView.contentInset = UIEdgeInsets(top: 16.0, left: 0.0, bottom: 0.0, right: 0.0)
+        tableView.backgroundColor = .clear
+        
+        view.addSubview(tableView)
+        tableView.snp.makeConstraints { make in
+            make.leading.centerX.equalToSuperview()
+            make.top.equalToSuperview().offset(0.0)
+            make.bottom.equalTo(separatorView.snp.top)
+        }
+    }
+    
     private func initScoreView() {
         scoreView = ScoreView()
+        scoreView.backgroundColor = .purple
         
-        scrollView.addSubview(scoreView)
+        view.addSubview(scoreView)
         scoreView.snp.makeConstraints { make in
-            make.top.equalTo(descLabel.snp.bottom).offset(20.0)
+            make.bottom.equalTo(separatorView)
             make.centerX.leading.equalToSuperview()
             make.height.equalTo(300.0)
         }
@@ -212,8 +188,6 @@ final class FroccsDetailViewController: BaseTabbarProtocolController {
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        let height = descLabel.y + descLabel.height
-        scrollView.contentSize = CGSize(width: scrollView.width, height: height)
     }
     
 }
@@ -221,13 +195,10 @@ final class FroccsDetailViewController: BaseTabbarProtocolController {
 // MARK: - Extensions -
 
 extension FroccsDetailViewController: FroccsDetailViewInterface {
-    func setTitleLabel(_ title: String?) {
-        titleLabel.text = title
+    func reloadList() {
+        tableView.reloadData()
     }
     
-    func setDescription(_ desc: String?) {
-        descLabel.text = desc
-    }
     
     func setWineSlider(to wine: Int?) {
         let value = Float(wine ?? 0)
@@ -245,6 +216,37 @@ extension FroccsDetailViewController: FroccsDetailViewInterface {
     
     func setWaterCoounter(to water: Int?) {
         waterCounterLabel.text = String(format: "Szóda: %d", water ?? 0)
+    }
+    
+}
+
+extension FroccsDetailViewController: UITableViewDataSource {
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        presenter.numberOfSections()
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        presenter.numberOfItem(in: section)
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withClass: DetailCell.self)
+        let model = presenter.itemForRow(at: indexPath)
+        cell.bind(model)
+        return cell
+    }
+    
+    
+}
+
+extension FroccsDetailViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let cell = tableView.dequeueReusableHeaderFooterView(withClass: DetailHeaderCell.self)
+        let model = presenter.headerItem(at: section)
+        cell.bind(model)
+        return cell
     }
     
 }
