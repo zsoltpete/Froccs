@@ -43,7 +43,6 @@ final class FroccsDetailPresenter {
         view.setWaterSlider(to: froccs?.rate?.water)
         changingRate = Rate(wine: froccs?.rate?.wine, water: froccs?.rate?.water)
         updateView()
-        createItems()
     }
     
     func viewWillAppear(animated: Bool) {
@@ -51,16 +50,17 @@ final class FroccsDetailPresenter {
     
     private func updateView() {
         let wine = froccs?.title ?? "Vegyes"
-        let desc = froccs?.desc ?? "Keverj valami jobbat. Ez sajnos nincs a listában"
         let wineRate = froccs?.rate?.wine ?? (changingRate?.wine ?? 0)
         let waterRate = froccs?.rate?.water ?? (changingRate?.water ?? 0)
         view.setWineCoounter(to: wineRate)
         view.setWaterCoounter(to: waterRate)
         view.setTitle(wine)
+        createItems()
     }
     
     private func createItems() {
         var items = [[String]]()
+        headerTitles = []
         if let history = froccs?.history {
             items.append([history])
             headerTitles.append("Történet:")
