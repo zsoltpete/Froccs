@@ -33,6 +33,7 @@ PODS:
   - SwifterSwift/UIKit (5.2.0)
   - SwiftLint (0.39.2)
   - SwiftyBeaver (1.9.1)
+  - TBEmptyDataSet (3.0)
 
 DEPENDENCIES:
   - "CYExtensions (from `git@bitbucket.org:team-codeyard/cyextensions.git`, branch `master`)"
@@ -43,6 +44,7 @@ DEPENDENCIES:
   - SwifterSwift
   - SwiftLint
   - SwiftyBeaver
+  - TBEmptyDataSet
 
 SPEC REPOS:
   trunk:
@@ -52,6 +54,7 @@ SPEC REPOS:
     - SwifterSwift
     - SwiftLint
     - SwiftyBeaver
+    - TBEmptyDataSet
 
 EXTERNAL SOURCES:
   CYExtensions:
@@ -78,7 +81,8 @@ SPEC CHECKSUMS:
   SwifterSwift: 334181863c416882d97b7a60c05054d9e4d799e2
   SwiftLint: 22ccbbe3b8008684be5955693bab135e0ed6a447
   SwiftyBeaver: a1f5691458561414bcfab51874b2b7445451602b
+  TBEmptyDataSet: 349add79095bf66d0d11ef9464edd1a8cf5354b5
 
-PODFILE CHECKSUM: 0bec92b0e9333f4b1cad367f8260067a6917e605
+PODFILE CHECKSUM: d3530d73c0ab2ab5538753da009785c68ff84310
 
 COCOAPODS: 1.9.1

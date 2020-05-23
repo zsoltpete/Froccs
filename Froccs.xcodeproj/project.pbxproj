@@ -59,6 +59,7 @@
 		54A4CB7F2479218500DA6DC6 /* DetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A4CB7E2479218500DA6DC6 /* DetailCell.swift */; };
 		54A4CB812479267B00DA6DC6 /* DetailHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A4CB802479267B00DA6DC6 /* DetailHeaderCell.swift */; };
 		54A4CB8324792D7A00DA6DC6 /* list.db in Resources */ = {isa = PBXBuildFile; fileRef = 54A4CB8224792D7900DA6DC6 /* list.db */; };
+		54A4CB8524793B1600DA6DC6 /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A4CB8424793B1600DA6DC6 /* EmptyView.swift */; };
 		F6CECDC83E7FBBA684DFF685 /* Pods_Froccs.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D1B61EADA8286B2824C37F1 /* Pods_Froccs.framework */; };
 /* End PBXBuildFile section */
 
@@ -134,6 +135,7 @@
 		54A4CB7E2479218500DA6DC6 /* DetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCell.swift; sourceTree = "<group>"; };
 		54A4CB802479267B00DA6DC6 /* DetailHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailHeaderCell.swift; sourceTree = "<group>"; };
 		54A4CB8224792D7900DA6DC6 /* list.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = list.db; sourceTree = "<group>"; };
+		54A4CB8424793B1600DA6DC6 /* EmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyView.swift; sourceTree = "<group>"; };
 		9C0B7910D5B3D654CE3114A2 /* Pods-TemplateUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TemplateUITests.debug.xcconfig"; path = "Target Support Files/Pods-TemplateUITests/Pods-TemplateUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		9D1B61EADA8286B2824C37F1 /* Pods_Froccs.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Froccs.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA1C71581E8FB7D1071CE22E /* Pods_TemplateUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TemplateUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -338,6 +340,7 @@
 				54865CCB2475BF4500453C7D /* ScoreView.swift */,
 				54A4CB7E2479218500DA6DC6 /* DetailCell.swift */,
 				54A4CB802479267B00DA6DC6 /* DetailHeaderCell.swift */,
+				54A4CB8424793B1600DA6DC6 /* EmptyView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -586,6 +589,7 @@
 				546E2C39245EF72E003FDCE5 /* FroccsDetailPresenter.swift in Sources */,
 				546E2C3A245EF72E003FDCE5 /* FroccsDetailViewController.swift in Sources */,
 				546E2C3C245EF72E003FDCE5 /* FroccsDetailWireframe.swift in Sources */,
+				54A4CB8524793B1600DA6DC6 /* EmptyView.swift in Sources */,
 				1BDD46A223AFFEAE0020AC54 /* Constants.swift in Sources */,
 				546E2C2B245EDE40003FDCE5 /* FroccsItemCell.swift in Sources */,
 				1B0BFB3D23362A000054E28A /* FormatterInterface.swift in Sources */,

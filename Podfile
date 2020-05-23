@@ -23,6 +23,7 @@ target 'Froccs' do
   pod 'SwifterSwift'
   pod 'SwiftLint'
   pod 'SwiftyBeaver'
+  pod 'TBEmptyDataSet'
   # pod 'SwiftyJSON'
 
 end
