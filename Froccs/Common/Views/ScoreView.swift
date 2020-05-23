@@ -34,8 +34,9 @@ class ScoreView: UIView {
     
     private func setup() {
         translatesAutoresizingMaskIntoConstraints = false
-        initScoreLabel()
         initAnimationView()
+        initScoreLabel()
+        
         initGestureRecognizer()
     }
     
@@ -47,10 +48,10 @@ class ScoreView: UIView {
         scoreLabel.textColor = .black
         
         addSubview(scoreLabel)
-        scoreLabel.snp.makeConstraints { make in
-            make.bottom.equalToSuperview()
-            make.leading.centerX.equalToSuperview()
-        }
+        //        scoreLabel.snp.makeConstraints { make in
+        //            make.bottom.equalToSuperview()
+        //            make.leading.centerX.equalToSuperview()
+        //        }
     }
     
     private func initAnimationView() {
@@ -59,10 +60,11 @@ class ScoreView: UIView {
         animationView.contentMode = .scaleAspectFit
         
         addSubview(animationView)
-        animationView.snp.makeConstraints { make in
-            make.leading.trailing.top.equalToSuperview()
-            make.bottom.equalTo(scoreLabel.snp.top).offset(-20.0)
-        }
+        
+        //        animationView.snp.makeConstraints { make in
+        //            make.leading.trailing.top.equalToSuperview()
+        //            make.bottom.equalTo(scoreLabel.snp.top).offset(-20.0)
+        //        }
     }
     
     private func initGestureRecognizer() {
@@ -123,6 +125,12 @@ class ScoreView: UIView {
     
     func stop() {
         animationView.stop()
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        animationView.frame = CGRect(x: 0, y: 10.0, width: width, height: height - 50.0)
+        scoreLabel.frame = CGRect(x: 0, y: animationView.height + 20.0, width: width, height: 30.0)
     }
     
 }

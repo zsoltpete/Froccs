@@ -170,6 +170,11 @@ final class FroccsDetailViewController: BaseTabbarProtocolController {
         tableView.contentInset = UIEdgeInsets(top: 16.0, left: 0.0, bottom: 0.0, right: 0.0)
         tableView.backgroundColor = .clear
         
+//        let footer = ScoreView()
+//        footer.size = CGSize(width: view.width, height: 300.0)
+//
+//        tableView.tableFooterView = footer
+        
         view.addSubview(tableView)
         tableView.snp.makeConstraints { make in
             make.leading.centerX.equalToSuperview()
@@ -251,6 +256,21 @@ extension FroccsDetailViewController: UITableViewDelegate {
         let model = presenter.headerItem(at: section)
         cell.bind(model)
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        let footer = ScoreView()
+        
+        footer.frame = CGRect(x: 0, y: 0, width: tableView.width, height: 300.0)
+        
+        return footer
+    }
+    
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        if section == presenter.numberOfSections() - 1 {
+            return 300.0
+        }
+        return 0.0
     }
     
 }
