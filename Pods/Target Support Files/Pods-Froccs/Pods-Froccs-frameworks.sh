@@ -199,6 +199,7 @@ fi
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/CYExtensions/CYExtensions.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/CYLocalization/CYLocalization.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/SQLite.swift/SQLite.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SwifterSwift/SwifterSwift.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SwiftyBeaver/SwiftyBeaver.framework"
@@ -207,6 +208,7 @@ fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/CYExtensions/CYExtensions.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/CYLocalization/CYLocalization.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/SQLite.swift/SQLite.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SwifterSwift/SwifterSwift.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SwiftyBeaver/SwiftyBeaver.framework"

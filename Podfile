@@ -19,6 +19,7 @@ target 'Froccs' do
   # pod 'SDWebImage'
   pod 'lottie-ios'
   pod 'SnapKit'
+  pod 'SQLite.swift'
   pod 'SwifterSwift'
   pod 'SwiftLint'
   pod 'SwiftyBeaver'

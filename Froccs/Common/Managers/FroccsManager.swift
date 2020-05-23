@@ -13,7 +13,7 @@ class FroccsManager {
     
     static let shared = FroccsManager()
     
-    private var froccsss: [Froccs] {
+    private var froccss = [Froccs]() /*{
         let item1 = Froccs(name: "KisFröccs", desc: "A fröccs bor és szódavíz keveréséből alkotott ital. 2013-ban felvették a Magyar Értéktárba. A bor és szódavíz mennyisége alapján különféle nevű fröccsök léteznek. A fröccs elnevezést alkalmazzák más szeszes, sőt nem szeszes italkeverékekre is, sőt bizonyos italok egymás utáni fogyasztására, azaz nem a pohárban, hanem a szájban vagy gyomorban való keverésére is. Német nyelvterületen is ismert Gemischt, Weinschorle vagy Sauergespritzter néven. (Forrás: Wikipédia)", rate: Rate(wine: 1, water: 1))
         let item2 = Froccs(name: "Nagyfröccs", desc: "A fröccs bor és szódavíz keveréséből alkotott ital. 2013-ban felvették a Magyar Értéktárba. A bor és szódavíz mennyisége alapján különféle nevű fröccsök léteznek. A fröccs elnevezést alkalmazzák más szeszes, sőt nem szeszes italkeverékekre is, sőt bizonyos italok egymás utáni fogyasztására, azaz nem a pohárban, hanem a szájban vagy gyomorban való keverésére is. Német nyelvterületen is ismert Gemischt, Weinschorle vagy Sauergespritzter néven. (Forrás: Wikipédia)", rate: Rate(wine: 2, water: 1))
         let item3 = Froccs(name: "Hosszúlépés", desc: "A fröccs bor és szódavíz keveréséből alkotott ital. 2013-ban felvették a Magyar Értéktárba. A bor és szódavíz mennyisége alapján különféle nevű fröccsök léteznek. A fröccs elnevezést alkalmazzák más szeszes, sőt nem szeszes italkeverékekre is, sőt bizonyos italok egymás utáni fogyasztására, azaz nem a pohárban, hanem a szájban vagy gyomorban való keverésére is. Német nyelvterületen is ismert Gemischt, Weinschorle vagy Sauergespritzter néven. (Forrás: Wikipédia)", rate: Rate(wine: 1, water: 2))
@@ -50,20 +50,27 @@ class FroccsManager {
             item15,
             item16
         ]
-    }
+    }*/
     
     private init() {
-        
+        DatabaseManager.shared.loadEntities { froccss, error in
+            if let error = error {
+                log.error(error.localizedDescription)
+            } else if let froccss = froccss {
+                log.debug(froccss.description)
+                self.froccss = froccss
+            }
+        }
     }
     
     func getFrocsss() -> [Froccs] {
         var value = [Froccs]()
-        value.append(contentsOf: froccsss)
+        value.append(contentsOf: froccss)
         return value
     }
     
     func getFroccs(from rate: Rate?) -> Froccs? {
-        for froccs in froccsss where froccs.rate?.wine == rate?.wine  && froccs.rate?.water == rate?.water {
+        for froccs in froccss where froccs.rate?.wine == rate?.wine  && froccs.rate?.water == rate?.water {
             return Froccs(froccs: froccs)
         }
         
