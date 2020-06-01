@@ -74,7 +74,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1B0BFAF8233628850054E28A /* Froccs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Froccs.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1B0BFAF8233628850054E28A /* Fröccs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Fröccs.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B0BFAFB233628850054E28A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1B0BFB04233628870054E28A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1B0BFB07233628870054E28A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -177,7 +177,7 @@
 		1B0BFAF9233628850054E28A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				1B0BFAF8233628850054E28A /* Froccs.app */,
+				1B0BFAF8233628850054E28A /* Fröccs.app */,
 				5419AB472473326F00ECBEA3 /* FroccsTests.xctest */,
 			);
 			name = Products;
@@ -456,7 +456,7 @@
 			);
 			name = Froccs;
 			productName = Template;
-			productReference = 1B0BFAF8233628850054E28A /* Froccs.app */;
+			productReference = 1B0BFAF8233628850054E28A /* Fröccs.app */;
 			productType = "com.apple.product-type.application";
 		};
 		5419AB462473326F00ECBEA3 /* FroccsTests */ = {
@@ -792,9 +792,9 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.petez.froccs;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Fröccs";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -812,9 +812,9 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.petez.froccs;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Fröccs";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

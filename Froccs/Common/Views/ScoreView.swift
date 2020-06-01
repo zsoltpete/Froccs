@@ -23,6 +23,7 @@ class ScoreView: UIView {
     
     private var animationView: AnimationView!
     private var scoreLabel: UILabel!
+    private var descLabel: UILabel!
     
     private var currentUnit = 0.0
     private var fromUnit = 0.0
@@ -44,10 +45,26 @@ class ScoreView: UIView {
     
     private func setup() {
         translatesAutoresizingMaskIntoConstraints = false
+        initDescLabel()
         initAnimationView()
         initScoreLabel()
         
+        
         initGestureRecognizer()
+    }
+    
+    private func initDescLabel() {
+        descLabel = UILabel()
+        
+        descLabel.textAlignment = .center
+        
+        descLabel.textColor = .black
+        
+        addSubview(descLabel)
+//        descLabel.snp.makeConstraints { make in
+//            make.top.equalToSuperview()
+//            make.leading.centerX.equalToSuperview()
+//        }
     }
     
     private func initScoreLabel() {
@@ -165,10 +182,15 @@ class ScoreView: UIView {
         animationView.play(toProgress: AnimationProgressTime(maxProgress / unit * currentUnit))
     }
     
+    func updateDesc(_ desc: String?) {
+        descLabel.text = desc
+    }
+    
     override func layoutSubviews() {
         super.layoutSubviews()
-        animationView.frame = CGRect(x: 0, y: 10.0, width: width, height: height - 50.0)
-        scoreLabel.frame = CGRect(x: 0, y: animationView.height + 20.0, width: width, height: 30.0)
+        descLabel.frame = CGRect(x: 0, y: 0, width: width, height: 40.0)
+        animationView.frame = CGRect(x: 0, y: descLabel.height, width: width, height: height - 90.0)
+        scoreLabel.frame = CGRect(x: 0, y: animationView.height + descLabel.height + 10.0, width: width, height: 30.0)
     }
     
 }

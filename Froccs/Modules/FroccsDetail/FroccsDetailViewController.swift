@@ -248,6 +248,7 @@ extension FroccsDetailViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         let footer = ScoreView()
         footer.setUserValue(presenter.getUserValue())
+        footer.updateDesc("Értékeld mennyire ízlik!")
         footer.delegate = self
         footer.frame = CGRect(x: 0, y: 0, width: tableView.width, height: 300.0)
         
